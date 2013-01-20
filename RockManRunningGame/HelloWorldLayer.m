@@ -138,10 +138,11 @@
 }
 
 -(void) swipeUp {
-    NSLog(@"swipeUp");
+    
     if(isJumping || isDashing || isAttacking) {
         return;
     }
+    NSLog(@"swipeUp");
     yVel = 3;
     [_rockman stopAllActions];
     [_rockman runAction:_jumpAction];
@@ -149,10 +150,11 @@
 }
 
 -(void) swipeDown {
-    NSLog(@"swipeDown");
+    
     if(isJumping || isDashing || isAttacking) {
         return;
     }
+    NSLog(@"swipeDown");
     [_rockman stopAllActions];
     [_rockman runAction:_dashAction];
     isDashing = YES;
@@ -181,10 +183,11 @@
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
-    NSLog(@"attack");
+    
     if(isJumping || isDashing || isAttacking) {
         return;
     }
+    NSLog(@"Touched");
     [_rockman stopAllActions];
     [_rockman runAction:_attackAction];
     isAttacking = YES;
